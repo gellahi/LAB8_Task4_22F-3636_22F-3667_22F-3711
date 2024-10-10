@@ -22,13 +22,18 @@ public class BankAccount {
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
+            System.out.println("Deposited: " + amount + ", New Balance: " + balance);
         } else {
             System.out.println("Deposit amount must be positive.");
         }
     }
 
     public static void main(String[] args) {
-        BankAccount account = new BankAccount(500.0);
-        System.out.println("Account Balance: $" + account.accountBalance());  // Output: Account Balance: $500.0
+        BankAccount account = new BankAccount(100.0);
+        account.deposit(50.0);
+        System.out.println("Balance after deposit: " + account.accountBalance()); // Should show 150.0
+        account.withdraw(30.0);
+        System.out.println("Balance after withdrawal: " + account.accountBalance()); // Should show 120.0
+        account.deposit(-20.0); // Should show error message
     }
 }
