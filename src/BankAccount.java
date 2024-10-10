@@ -5,22 +5,28 @@ public class BankAccount {
         this.balance = initialBalance;
     }
 
-    // Placeholder for the accountBalance() method (Member 1)
+
     public double accountBalance() {
         return balance;
     }
 
-    // Placeholder for the withdraw() method (Member 2)
+
     public void withdraw(double amount) {
-        // Withdraw logic here
+        if (amount > balance) {
+            System.out.println("Insufficient funds. Withdrawal denied.");
+        } else {
+            balance -= amount;
+            System.out.println("Withdrew: " + amount + ", New Balance: " + balance);
+        }
     }
 
-    // Placeholder for the deposit() method (Member 3)
+
+
     public void deposit(double amount) {
-        // Deposit logic here
+
     }
 
     public static void main(String[] args) {
-        // Test the BankAccount class here
+
     }
 }
